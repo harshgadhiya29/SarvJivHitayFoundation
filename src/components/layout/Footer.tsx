@@ -20,15 +20,6 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-3 pt-2">
               <a 
-                href={siteConfig.social.facebook} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-primary-100 hover:text-white transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a 
                 href={siteConfig.social.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer" 
@@ -36,15 +27,6 @@ const Footer: React.FC = () => {
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
-              </a>
-              <a 
-                href={siteConfig.social.twitter} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-primary-100 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} />
               </a>
               <a 
                 href={siteConfig.social.youtube} 

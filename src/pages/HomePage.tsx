@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, ChevronDown, ArrowRight, User, ArrowUp, Menu, X } from 'lucide-react';
-import logo from '../img/LOGOSJHF.png';
+import Dlogo from '../img/LOGOSJHF.png';
+import Mlogo from '../img/WL_optimized.png';
+import GalleryPreview from '../components/sections/GalleryPreview';
+import Footer from '../components/layout/Footer';
+import Header from '../components/layout/Header';
 // Layout Component
 const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -10,10 +14,9 @@ const HomePage = () => {
 
   // Slider images for hero background
   const sliderImages = [
-    "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg",
-    "https://images.pexels.com/photos/3493777/pexels-photo-3493777.jpeg",
-    "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg",
-    "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg"
+    "./img/1.jpg",
+    "./img/2.jpg",
+    "./img/3.jpg"
   ];
   
   useEffect(() => {
@@ -55,76 +58,10 @@ const HomePage = () => {
   return (
     <div className="font-sans min-h-screen flex flex-col">
       {/* Header with animated navigation */}
-      <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className={`transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}>
-              <div className="flex items-center">
-              <img src={logo} alt="Logo"  className="h-10 object-contain" />
-
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-6">
-              {['Home', 'About', 'Initiatives', 'Gallery', 'Videos', 'Contact'].map((item) => (
-                <li key={item} className="group relative">
-                  <a
-                    href={`/${item.toLowerCase()}`}
-                    className={`font-medium text-sm transition-colors group-hover:text-blue-600 ${scrolled ? 'text-blue-900' : 'text-white'
-                      }`}
-                  >
-                    {item}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleMobileMenu}
-              className="mr-4 text-blue-600 focus:outline-none"
-            >
-              {mobileMenuOpen ? (
-                <X className={`w-6 h-6 ${scrolled ? 'text-blue-800' : 'text-white'}`} />
-              ) : (
-                <Menu className={`w-6 h-6 ${scrolled ? 'text-blue-800' : 'text-white'}`} />
-              )}
-            </button>
-          </div>
-
-          {/* Donate Button (Always Visible) */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-            Donate Now
-          </button>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        <div className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ${mobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 overflow-hidden'}`}>
-          <ul className="px-4 space-y-3">
-            {['Home', 'About', 'Initiatives', 'Gallery', 'Videos', 'Contact'].map((item) => (
-              <li key={item}>
-                <a
-                  href={`/${item.toLowerCase()}`}
-                  className="block font-medium text-blue-900 hover:text-blue-600 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </header>
+      <Header/>
 
       {/* Main Content */}
-      <main className="flex-grow">
+      <main className="flex-grow" id='main-content'>
         {/* Hero Section with Slider Animation */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-blue-900">
           <div className="absolute inset-0 z-0">
@@ -180,7 +117,7 @@ const HomePage = () => {
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <div className="animate-pulse">
+            <div className="">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 <span className="block">For the Welfare of</span>
                 <span className="block text-blue-300">All Living Beings</span>
@@ -355,47 +292,8 @@ const HomePage = () => {
 
         {/* Gallery Preview Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Gallery</h2>
-              <p className="text-lg text-blue-700 max-w-3xl mx-auto">
-                Explore moments from our journey of creating positive impact.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg",
-                "https://images.pexels.com/photos/1483769/pexels-photo-1483769.jpeg",
-                "https://images.pexels.com/photos/5721057/pexels-photo-5721057.jpeg",
-                "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg",
-                "https://images.pexels.com/photos/3493777/pexels-photo-3493777.jpeg",
-                "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg"
-              ].map((image, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg h-64 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                  <img
-                    src={image}
-                    alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-0 group-hover:opacity-70 transition-all duration-300"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-300">
-                    <h3 className="font-bold">Project Title</h3>
-                    <p className="text-sm text-blue-100">Brief description of this project or event</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <a
-                href="/gallery"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-              >
-                View All Photos
-              </a>
-            </div>
-          </div>
+          <GalleryPreview/>
+            {/* group relative overflow-hidden rounded-lg shadow-lg h-64 transform transition-all duration-300 hover:scale-105 hover:shadow-xl */}
         </section>
 
         {/* Rest of the sections remain the same */}
@@ -485,7 +383,7 @@ const HomePage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white pt-16 pb-8">
+      {/* <footer className="bg-blue-900 text-white pt-16 pb-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
@@ -564,7 +462,8 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <Footer/>
 
       {/* Scroll to top button */}
       <button

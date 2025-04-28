@@ -35,7 +35,7 @@ const GalleryPreview: React.FC = () => {
           {previewImages.map((image) => (
             <div 
               key={image.id} 
-              className="overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               onClick={() => openLightbox(image.id)}
             >
               <div className="aspect-square overflow-hidden">

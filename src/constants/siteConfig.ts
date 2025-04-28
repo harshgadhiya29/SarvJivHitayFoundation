@@ -8,10 +8,8 @@ export const siteConfig = {
     address: "123 Peace Avenue, New Delhi, India 110001",
   },
   social: {
-    facebook: "https://facebook.com/sarvjivhitay",
-    instagram: "https://instagram.com/sarvjivhitay",
-    twitter: "https://twitter.com/sarvjivhitay",
-    youtube: "https://youtube.com/sarvjivhitay",
+    instagram: "https://www.instagram.com/sarvjivhitayfoundation?igsh=MWJjY3l4a3l3a2Vleg==",
+    youtube: "https://youtube.com/@sarvjivhitayfoundation?si=n-nwMUN-B1YehAzl",
   },
   navLinks: [
     { name: "Home", path: "/" },
@@ -167,32 +165,5 @@ export const impactStats = [
     stat: "5,000+", 
     description: "Volunteers Engaged", 
     icon: "Heart" 
-  }
-];
-
-export const initiatives = [
-  {
-    id: 1,
-    title: "Animal Welfare",
-    description: "Providing rescue, rehabilitation, and care for animals in need.",
-    icon: "PawPrint"
-  },
-  {
-    id: 2,
-    title: "Environmental Conservation",
-    description: "Protecting natural habitats and promoting sustainable practices.",
-    icon: "Leaf"
-  },
-  {
-    id: 3,
-    title: "Community Development",
-    description: "Empowering communities through education and resources.",
-    icon: "Home"
-  },
-  {
-    id: 4,
-    title: "Organic Farming",
-    description: "Supporting sustainable agriculture that respects all life forms.",
-    icon: "Wheat"
   }
 ];
