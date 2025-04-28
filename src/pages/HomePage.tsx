@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, ChevronDown, ArrowRight, User, ArrowUp, Menu, X } from 'lucide-react';
-
+import logo from '../img/LOGOSJHF.png';
 // Layout Component
 const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,7 +15,7 @@ const HomePage = () => {
     "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg",
     "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg"
   ];
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -61,8 +61,8 @@ const HomePage = () => {
           <div className="flex items-center">
             <div className={`transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}>
               <div className="flex items-center">
-                <Heart className="w-8 h-8 text-blue-600 mr-2" fill="#3b82f6" />
-                <span className={`font-bold text-xl ${scrolled ? 'text-blue-800' : 'text-white'}`}>Sarv Jiv Hitay</span>
+              <img src={logo} alt="Logo"  className="h-10 object-contain" />
+
               </div>
             </div>
           </div>
@@ -337,7 +337,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            {/* Call to action */}
+            {/* Call to action */}    
             <div className="text-center mt-16">
               <button className="bg-white text-blue-900 px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:bg-blue-100 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 See Our Impact Report
