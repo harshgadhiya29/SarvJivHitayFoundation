@@ -24,13 +24,13 @@ const GalleryPage: React.FC = () => {
         subtitle="Moments from our journey of creating positive impact"
         backgroundImage="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1920"
       />
+      <section className="section bg-white" style={{ marginTop: '-40px' }}>
       <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Instagram Posts</h2>
+            <h2 className="text-3xl font-bold mb-4">Foundation Post Work Completed</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Stay updated with our latest initiatives, events, and impact stories through our Instagram posts.
+            Ensuring a Strong and Lasting Base for Your Structure
             </p>
       </div>
-      <section className="section bg-white">
         <div className="container">
           {/* Category filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
