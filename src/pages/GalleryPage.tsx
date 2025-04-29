@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import PageHero from '../components/common/PageHero';
 import GalleryGrid from '../components/Gallery/GalleryGrid';
+import InstagramGrid from '../components/InstagramFeed/InstagramFeed';
+import { siteConfig } from '../constants/siteConfig';
+import { Play, Instagram } from 'lucide-react';
+
+
 
 const GalleryPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string | undefined>(undefined);
@@ -19,7 +24,12 @@ const GalleryPage: React.FC = () => {
         subtitle="Moments from our journey of creating positive impact"
         backgroundImage="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1920"
       />
-      
+      <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Instagram Posts</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Stay updated with our latest initiatives, events, and impact stories through our Instagram posts.
+            </p>
+      </div>
       <section className="section bg-white">
         <div className="container">
           {/* Category filter */}
@@ -40,6 +50,29 @@ const GalleryPage: React.FC = () => {
           </div>
           
           <GalleryGrid filter={activeFilter} />
+        </div>
+      </section>
+       {/* Instagram Posts Section */}
+       <section className="section bg-gray-50">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Instagram Posts</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Stay updated with our latest initiatives, events, and impact stories through our Instagram posts.
+            </p>
+          </div>
+          <InstagramGrid />
+          <div className="mt-8 text-center">
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all"
+            >
+              <Instagram size={20} className="mr-2" />
+              Follow @sarvjivhitayfoundation
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

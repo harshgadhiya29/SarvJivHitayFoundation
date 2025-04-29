@@ -11,6 +11,24 @@ const Header: React.FC = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Navigation items with their paths
+  const navItems = [
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Gallery', path: '/gallery' },
+    { title: 'Videos', path: '/videos' },
+    { title: 'Contact', path: '/contact' }
+  ];
+
+  // Mobile navigation items (includes Initiatives)
+  const mobileNavItems = [
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Gallery', path: '/gallery' },
+    { title: 'Videos', path: '/videos' },
+    { title: 'Contact', path: '/contact' }
+  ];
+
   return (
     <div className="font-sans">
     {/* Header with animated navigation */}
@@ -28,13 +46,13 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          {['Home', 'About', 'Gallery', 'Videos', 'Contact'].map((item) => (
+          {navItems.map((item) => (
             <a
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              className="font-medium text-sm transition-colors hover:text-blue-600 text-black"
+              key={item.title}
+              href={item.path}
+              className="font-medium text-sm transition-colors hover:text-yellow-600 text-black"
             >
-              {item}
+              {item.title}
             </a>
           ))}
           {/* Donate Now Button for Desktop */}
@@ -46,7 +64,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center justify-between w-full px-0 smallNavbar">
           {/* Left: Logo */}
-          <img src={Mlogo} alt="Logo" className="object-contain Mimage" />
+          <img src={Dlogo} alt="Logo" className="object-contain Mimage" />
 
           {/* Right: Navigation Menu Button */}
           <button
@@ -65,14 +83,14 @@ const Header: React.FC = () => {
       {/* Mobile Navigation Menu */}
       <div className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ${mobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 overflow-hidden'}`}>
         <ul className="px-4 space-y-3">
-          {['Home', 'About', 'Initiatives', 'Gallery', 'Videos', 'Contact'].map((item) => (
-            <li key={item}>
+          {mobileNavItems.map((item) => (
+            <li key={item.title}>
               <a
-                href={`/${item.toLowerCase()}`}
+                href={item.path}
                 className="block font-medium text-blue-900 hover:text-blue-600 transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {item}
+                {item.title}
               </a>
             </li>
           ))}

@@ -1,3 +1,7 @@
+import YTT1 from "../img/YoutubeThumbnail 1.jpg";
+import YTT2 from "../img/YoutubeThumbnail 2.jpg";
+// import Home from "../pages/HomePage";
+
 export const siteConfig = {
   name: "Sarv Jiv Hitay Foundation",
   description: "Dedicated to the welfare of all living beings",
@@ -113,31 +117,17 @@ export const galleryImages = [
 export const videos = [
   {
     id: 1,
-    title: "Our Mission",
-    description: "Learn about our foundation's mission and the impact we're making across India.",
-    thumbnail: "https://images.pexels.com/photos/3493777/pexels-photo-3493777.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://www.youtube.com/embed/B7a8dYEPzwQ",
+    title: "વ્યસન થી વિનાશ",
+    description: "વ્યસન એક એવો માર્ગ છે જે આરામથી શરુ થાય છે પણ વિનાશ સુધી લઈ જાય છે.",
+    thumbnail: {YTT1},
+    url: "https://youtu.be/eE1UnJpYji4?si=HikhPDWLuEojzTmi",
   },
   {
     id: 2,
-    title: "Animal Rescue Stories",
-    description: "Heartwarming stories of animals we've rescued and rehabilitated.",
-    thumbnail: "https://images.pexels.com/photos/1904105/pexels-photo-1904105.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://www.youtube.com/embed/9vQnKO_2kKk",
-  },
-  {
-    id: 3,
-    title: "Environmental Conservation",
-    description: "Our initiatives to protect and preserve natural habitats across the country.",
-    thumbnail: "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://www.youtube.com/embed/zk8zSpDGMZU",
-  },
-  {
-    id: 4,
-    title: "Community Outreach Programs",
-    description: "How we're working with local communities to create sustainable change.",
-    thumbnail: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://www.youtube.com/embed/oEHKzdYfuXM",
+    title: "Food For Hunger ( જરૂરિયાત લોકોને ભોજન )",
+    description: "ભુખ્યા પેટ માટે ભોજન એ ઈશ્વરની ભેટ છે, આવો મળીને જરૂરિયાતમંદ સુધી આ ભેટ પહોંચાડીએ.",
+    thumbnail: {YTT2},
+    url: "https://youtu.be/avgmKxPCJoU?si=srJEHNRMaD32X8jZ",
   }
 ];
 
@@ -165,5 +155,85 @@ export const impactStats = [
     stat: "5,000+", 
     description: "Volunteers Engaged", 
     icon: "Heart" 
+  }
+];
+
+// Instagram posts data
+export const instagramPosts = {
+  posts: [
+    {
+      id: 1,
+      caption: "Supporting local animal shelters with food and medical supplies. Every life matters! #AnimalWelfare #SarvJivHitay",
+      imageUrl: "https://images.pexels.com/photos/1904105/pexels-photo-1904105.jpeg?auto=compress&cs=tinysrgb&w=800",
+      date: "April 25, 2025",
+      url: "https://www.instagram.com/p/example1/"
+    },
+    {
+      id: 2,
+      caption: "Our volunteers planted 500 trees today as part of our ongoing reforestation initiative. #PlantingHope #GreenFuture",
+      imageUrl: "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=800",
+      date: "April 20, 2025",
+      url: "https://www.instagram.com/p/example2/"
+    },
+    {
+      id: 3,
+      caption: "Teaching compassion - Today's workshop with children focused on kindness to all living beings. #Education #Compassion",
+      imageUrl: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=800",
+      date: "April 15, 2025",
+      url: "https://www.instagram.com/p/example3/"
+    },
+    {
+      id: 4,
+      caption: "Working with wildlife authorities to protect endangered species in their natural habitats. #WildlifeConservation",
+      imageUrl: "https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=800",
+      date: "April 10, 2025",
+      url: "https://www.instagram.com/p/example4/"
+    },
+    {
+      id: 5,
+      caption: "River cleanup campaign - Our team removed over 200kg of plastic waste from local waterways this weekend. #CleanWater",
+      imageUrl: "https://images.pexels.com/photos/2990650/pexels-photo-2990650.jpeg?auto=compress&cs=tinysrgb&w=800",
+      date: "April 5, 2025",
+      url: "https://www.instagram.com/p/example5/"
+    },
+    {
+      id: 6,
+      caption: "Happy tails! 15 rescued animals found their forever homes at today's adoption event. #AdoptDontShop #AnimalLove",
+      imageUrl: "https://images.pexels.com/photos/1634840/pexels-photo-1634840.jpeg?auto=compress&cs=tinysrgb&w=800",
+      date: "April 1, 2025",
+      url: "https://www.instagram.com/p/example6/"
+    }
+  ]
+};
+
+// Instagram videos data
+export const instagramVideos = [
+  {
+    id: 1,
+    title: "Animal Rescue Mission",
+    description: "Watch our team rescue injured stray animals and provide them with medical care and shelter.",
+    url: "https://www.youtube.com/embed/example1",
+    instagramUrl: "https://www.instagram.com/p/example-video1/"
+  },
+  {
+    id: 2,
+    title: "Planting Hope: Community Tree Planting",
+    description: "Our volunteers joined hands with the local community to plant native trees and restore green spaces.",
+    url: "https://www.youtube.com/embed/example2",
+    instagramUrl: "https://www.instagram.com/p/example-video2/"
+  },
+  {
+    id: 3,
+    title: "River Cleanup Drive",
+    description: "Join us as we clean up plastic waste from local rivers to protect aquatic life and ensure clean water.",
+    url: "https://www.youtube.com/embed/example3",
+    instagramUrl: "https://www.instagram.com/p/example-video3/"
+  },
+  {
+    id: 4,
+    title: "Wildlife Conservation Efforts",
+    description: "Learn about our initiatives to protect endangered species and preserve their natural habitats.",
+    url: "https://www.youtube.com/embed/example4",
+    instagramUrl: "https://www.instagram.com/p/example-video4/"
   }
 ];

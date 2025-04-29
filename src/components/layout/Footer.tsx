@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="w-full px-3 py-2 rounded bg-primary-800 text-white placeholder-primary-300 text-sm border border-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full px-3 py-2 rounded bg-primary-800 text-white placeholder-black text-sm border border-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-400"
                 required
               />
               <button
