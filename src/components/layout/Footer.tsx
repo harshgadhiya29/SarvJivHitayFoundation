@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { siteConfig } from '../../constants/siteConfig';
+import logo  from '../../img/WL.png';
 
 const Footer: React.FC = () => {
   return (
@@ -11,8 +12,8 @@ const Footer: React.FC = () => {
           {/* About Foundation */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Heart className="w-7 h-7" fill="white" />
-              <span className="font-serif text-xl">{siteConfig.name}</span>
+              <img src={logo} alt="Foundation Logo" className="w-12 h-12" />
+              <h3 className="text-lg font-medium">{siteConfig.name}</h3>
             </div>
             <p className="text-primary-100 text-sm">
               {siteConfig.description}. <br />
@@ -129,14 +130,6 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-primary-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-primary-200">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <Link to="/privacy-policy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

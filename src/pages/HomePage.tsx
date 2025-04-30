@@ -143,18 +143,6 @@ const HomePage = () => {
               ))}
             </div>
 
-            {/* Slider controls */}
-            <div className="absolute bottom-8 left-0 right-0 flex justify-center z-20">
-              {sliderImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 mx-1 rounded-full transition-all ${currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'
-                    }`}
-                  onClick={() => setCurrentSlide(index)}
-                />
-              ))}
-            </div>
-
             {/* Animated particles */}
             <div className="absolute inset-0 flex z-10">
               {Array.from({ length: 20 }).map((_, i) => (
@@ -178,11 +166,10 @@ const HomePage = () => {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <div className="">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                <span className="block">For the Welfare of</span>
-                <span className="block text-blue-300">All Living Beings</span>
+                <span className="block">🌿 Compassion Is the True Strength 🌿</span>
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8">
-                Promoting compassion, conservation, and community development through sustainable practices and education.
+              True strength lies in compassion—lifting others, serving selflessly, and honoring the value of every life.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
@@ -209,24 +196,24 @@ const HomePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  title: "Animal Welfare",
+                  title: "People Welfare",
                   icon: "🥼",
+                  description: "Providing rescue, shelter, and medical care to poor and vulnerable individuals in need through our shelters and medical camps."
+                },
+                {
+                  title: "Food Distribution for the Needy",
+                  icon: "🥗",
+                  description: "Distributing food to individuals in need through our hunger relief and food distribution programs."
+                },
+                {
+                  title: "Animal Welfare",
+                  icon: "🐾",
                   description: "Rescuing and providing care for animals in need through our shelters and medical camps."
                 },
                 {
                   title: "Environmental Conservation",
-                  icon: "🥗",
-                  description: "Protecting and restoring natural habitats through tree planting and cleanup drives."
-                },
-                {
-                  title: "Community Development",
-                  icon: "🐾",
-                  description: "Empowering local communities through education, healthcare, and livelihood programs."
-                },
-                {
-                  title: "Sustainable Farming",
                   icon: "🌱",
-                  description: "Promoting organic agriculture and sustainable farming practices."
+                  description: "Protecting and restoring natural habitats through tree planting and cleanup drives."
                 }
               ].map((item, index) => (
                 <div
@@ -239,15 +226,6 @@ const HomePage = () => {
                     </div>
                     <h3 className="text-xl font-bold text-blue-900 mb-2">{item.title}</h3>
                     <p className="text-blue-700 mb-4">{item.description}</p>
-                    <div className="flex justify-between items-center">
-                      <a
-                        href={`/initiatives/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-blue-600 font-medium flex items-center transition-all group-hover:text-blue-800"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-1 transition-all group-hover:ml-2" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               ))}
@@ -297,10 +275,10 @@ const HomePage = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { number: "10,000+", label: "Animals Rescued", icon: "🐾" },
-                { number: "50,000+", label: "Trees Planted", icon: "🌳" },
-                { number: "100+", label: "Communities Served", icon: "👥" },
-                { number: "5,000+", label: "Volunteers Engaged", icon: "🤝" }
+                { number: "10,000+", label: "People Welfare", icon: "🥼" },
+                { number: "50,000+", label: "Food Distribution for the Needy", icon: "🥗" },
+                { number: "100+", label: "Animal Welfare", icon: "🐾" },
+                { number: "5,000+", label: "Environmental Conservation", icon: "🌱" }
               ].map((stat, index) => (
                 <div
                   key={index}

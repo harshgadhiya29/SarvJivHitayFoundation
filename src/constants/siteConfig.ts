@@ -4,7 +4,7 @@ import YTT2 from "../img/YoutubeThumbnail 2.jpg";
 
 export const siteConfig = {
   name: "Sarv Jiv Hitay Foundation",
-  description: "Dedicated to the welfare of all living beings",
+  description: "Sarv Jiv Hitay Foundation is a charitable organization dedicated to serving the underprivileged, supporting helpless individuals, and caring for animals in need. Guided by the principle of compassion for all living beings, the foundation works tirelessly to bring relief, dignity, and hope to those who need it most.",
   tagline: "Nurturing Life, Inspiring Harmony",
   contactInfo: {
     email: "sarvjivhitayfoundation@gmail.com",
