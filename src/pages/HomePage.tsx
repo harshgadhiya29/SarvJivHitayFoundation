@@ -3,6 +3,10 @@ import { Heart, ChevronDown, ArrowRight, User, ArrowUp, Menu, X } from 'lucide-r
 import GalleryPreview from '../components/sections/GalleryPreview';
 import Footer from '../components/layout/Footer';
 import Header from '../components/layout/Header';
+import Divya_Baskar_Logo from '../img/Divya_Baskar_Logo.png';
+import InstagramLogo from "../img/instagram.png";
+import YouTubeLogo from "../img/ytlogo.png";
+import FoundationLogo from "../img/WL.png";
 
 // Import slider images - ADD NEW IMAGES HERE
 import sliderImage1 from '../img/1.jpg';
@@ -37,7 +41,7 @@ const HomePage = () => {
     //   alt: "Slide 4 - Sustainable Farming",
     // },
   ];
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -74,10 +78,46 @@ const HomePage = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // socialMedia section
+
+  type SocialMedia = {
+    platform: "Instagram" | "YouTube";
+    icon: string;
+    username: string;
+    followers?: string;
+    subscribers?: string;
+    description: string;
+    link: string;
+  };
+
+  const socialMediaData: SocialMedia[] = [
+    {
+      platform: "Instagram",
+      icon: InstagramLogo,
+      username: "@sarvjivhitayfoundation",
+      followers: "85+ followers",
+      description:
+        "Follow us for beautiful moments from our animal rescues, environmental initiatives, and community events.",
+      link: "https://www.instagram.com/sarvjivhitayfoundation?igsh=MWJjY3l4a3l3a2Vleg==",
+    },
+    {
+      platform: "YouTube",
+      icon: YouTubeLogo,
+      username: "Sarv Jiv Hitay Foundation",
+      subscribers: "160 + subscribers",
+      description:
+        "Watch our impactful documentaries, rescue stories, and educational content about conservation.",
+      link: "https://www.youtube.com/@sarvjivhitayfoundation?sub_confirmation=1",
+    },
+  ];
+  const [popup, setPopup] = useState<SocialMedia | null>(null);
+
+  const closePopup = () => setPopup(null);
+
   return (
     <div className="font-sans min-h-screen flex flex-col">
       {/* Header with animated navigation */}
-      <Header/>
+      <Header />
 
       {/* Main Content */}
       <main className="flex-grow" id='main-content'>
@@ -91,9 +131,8 @@ const HomePage = () => {
               {sliderImages.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    currentSlide === index ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === index ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
                   <img
                     src={image.src}
@@ -109,9 +148,8 @@ const HomePage = () => {
               {sliderImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 mx-1 rounded-full transition-all ${
-                    currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'
-                  }`}
+                  className={`w-3 h-3 mx-1 rounded-full transition-all ${currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'
+                    }`}
                   onClick={() => setCurrentSlide(index)}
                 />
               ))}
@@ -295,7 +333,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            {/* Call to action */}    
+            {/* Call to action */}
             <div className="text-center mt-16">
               <button className="bg-white text-blue-900 px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:bg-blue-100 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 See Our Impact Report
@@ -313,62 +351,156 @@ const HomePage = () => {
 
         {/* Gallery Preview Section */}
         <section className="bg-white GalleryPreview">
-          <GalleryPreview/>
+          <GalleryPreview />
         </section>
 
         {/* Rest of the sections remain the same */}
-        {/* Testimonials Section */}
-        <section className="py-20 bg-blue-50">
+        {/* Divya Bhaskar Media Recognition Section */}
+        <section className="py-20 bg-blue-50 overflow-hidden relative">
+          {/* Decorative background elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-20 -ml-48 -mb-48"></div>
+
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Testimonials</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Media Recognition</h2>
               <p className="text-lg text-blue-700 max-w-3xl mx-auto">
-                Hear from the people who have been part of our journey.
+                Our efforts to create positive impact have been recognized by leading media organizations.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Priya Sharma",
-                  role: "Volunteer",
-                  photo: "https://randomuser.me/api/portraits/women/44.jpg",
-                  quote: "Working with Sarv Jiv Hitay Foundation has been a life-changing experience. Their dedication to animal welfare and environmental conservation is truly inspiring."
-                },
-                {
-                  name: "Rajesh Patel",
-                  role: "Community Member",
-                  photo: "https://randomuser.me/api/portraits/men/32.jpg",
-                  quote: "The foundation's sustainable farming initiatives have transformed our community. We've learned valuable skills and now have a reliable source of income."
-                },
-                {
-                  name: "Meera Reddy",
-                  role: "Donor",
-                  photo: "https://randomuser.me/api/portraits/women/68.jpg",
-                  quote: "I'm proud to support an organization that shows such commitment to their mission. The transparency and impact reports give me confidence that my donations are making a difference."
-                }
-              ].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                      <img
-                        src={testimonial.photo}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-blue-900">{testimonial.name}</h3>
-                      <p className="text-sm text-blue-700">{testimonial.role}</p>
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
+                <div className="flex flex-col md:flex-row">
+                  {/* Logo and visual side */}
+                  <div className="w-full md:w-2/5 bg-gradient-to-br from-blue-800 to-blue-900 p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="mb-6 w-48 h-48 mx-auto relative">
+                        <a href='https://www.divyabhaskar.co.in/local/gujarat/ahmedabad/news/awareness-program-of-sarva-jiv-hitay-foundation-trust-134320812.html'><img src={Divya_Baskar_Logo} alt="Logo" className="w-full h-full object-cover" /></a>
+                      </div>
+                      <p className="text-blue-200 font-medium italic">Gujarat's Leading Newspaper</p>
                     </div>
                   </div>
-                  <p className="text-blue-800 italic">"{testimonial.quote}"</p>
+
+                  {/* Content side */}
+                  <div className="w-full md:w-3/5 p-6 md:p-12">
+                    <div className="h-full flex flex-col justify-center">
+                      <div className="mb-4">
+                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Featured Article</span>
+                      </div>
+                      <h3 className="font-bold text-blue-900 mb-4 DVHeading">
+                        <p className="text-red-500">સર્વ જીવ હિતાય ફાઉન્ડેશન ટ્રસ્ટનો જાગૃતિ કાર્યક્રમ:</p>મણીનગર ITIમાં 250 વિદ્યાર્થીઓને PPT અને શોર્ટ ફિલ્મ દ્વારા વ્યસન-મુક્તિ અંગે જાગૃત કરાયા
+                      </h3>
+                      <p className="text-blue-700 mb-6">
+                        અમદાવાદના વસ્ત્રાલ ખાતે આવેલા સર્વ જીવ હિતાય ફાઉન્ડેશન ટ્રસ્ટ દ્વારા તારીખ 10 જાન્યુઆરી 2025ને શુક્રવારના રોજ મણીનગર શાખા અંતર્ગતની ઈન્ડસ્ટ્રીયલ ઈન્સ્ટીટ્યુટ ઓફ ટ્રેઈનિંગ કોલેજ, વસ્ત્રાલમાં વ્યસન-મુક્તિ અંગેનો જાગૃતિ કાર્યક્રમ યોજાયો હતો. જેમાં પ્રેક
+                      </p>
+                      <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex items-center">
+                          <span className="text-sm text-blue-600 mr-1">Published on:</span>
+                          <span className="text-sm font-medium text-blue-800">January 30, 2025</span>
+                        </div>
+                        <div className="flex-grow"></div>
+                        <a
+                          href="https://www.divyabhaskar.co.in/local/gujarat/ahmedabad/news/awareness-program-of-sarva-jiv-hitay-foundation-trust-134320812.html"
+                          className="inline-flex items-center text-blue-600 font-medium transition-all hover:text-blue-800 group"
+                        >
+                          Read Full Article
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-all group-hover:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
+
+            {/* Social Media Section */}
+            <div className="relative">
+      {/* Social Media Cards */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {socialMediaData.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 transform flex flex-col items-center text-center"
+          >
+            <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-blue-100">
+              <img
+                src={item.icon}
+                alt={`${item.platform} logo`}
+                className="w-8 h-8"
+              />
+            </div>
+            <h4 className="text-blue-900 font-bold mb-1">{item.platform}</h4>
+            <p className="text-blue-600 font-medium text-sm mb-2">
+              {item.username}
+            </p>
+            <p className="text-blue-700 text-sm mb-2">
+              {item.followers || item.subscribers}
+            </p>
+            <p className="text-blue-700 mb-2">{item.description}</p>
+            <button
+              onClick={() => setPopup(item)}
+              className="inline-flex items-center text-blue-600 font-medium transition-all hover:text-blue-800 group"
+            >
+              {item.platform === "YouTube" ? "Subscribe" : "Follow"}
+              <ArrowRight className="w-4 h-4 ml-1 transition-all group-hover:ml-2" />
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Popup Modal */}
+      {popup && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-8 w-full max-w-md min-h-[480px] relative shadow-xl animate-fadeIn flex flex-col items-center text-center">
+            {/* Close Button */}
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Foundation Logo */}
+            <div className="mb-4">
+              <img
+                src={FoundationLogo}
+                alt="Foundation Logo"
+                className="w-32 h-32 object-contain mx-auto"
+              />
+            </div>
+
+            {/* Platform Icon */}
+            <div className="mb-3">
+              <img
+                src={popup.icon}
+                alt={`${popup.platform} logo`}
+                className="w-10 h-10 mx-auto"
+              />
+            </div>
+
+            <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-2">
+              {popup.platform === "YouTube"
+                ? "Subscribe to our channel"
+                : "Follow us on Instagram"}
+            </h3>
+
+            <p className="text-blue-700 mb-6 px-2">{popup.description}</p>
+
+            <a
+              href={popup.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all"
+            >
+              {popup.platform === "YouTube" ? "Go to YouTube" : "Open Instagram"}
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
           </div>
         </section>
 
@@ -403,12 +535,11 @@ const HomePage = () => {
       </main>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
       {/* Scroll to top button */}
       <button
-        className={`fixed bottom-6 right-6 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg transition-all duration-300 ${
-          showScrollTop ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed bottom-6 right-6 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg transition-all duration-300 ${showScrollTop ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         onClick={scrollToTop}
       >
         <ArrowUp className="w-6 h-6" />

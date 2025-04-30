@@ -7,9 +7,9 @@ export const siteConfig = {
   description: "Dedicated to the welfare of all living beings",
   tagline: "Nurturing Life, Inspiring Harmony",
   contactInfo: {
-    email: "contact@sarvjivhitay.org",
-    phone: "+91 98765 43210",
-    address: "123 Peace Avenue, New Delhi, India 110001",
+    email: "sarvjivhitayfoundation@gmail.com",
+    phone: "+91 9909908676",
+    address: "Vastral, Ahmedabad, Gujarat, India",
   },
   social: {
     instagram: "https://www.instagram.com/sarvjivhitayfoundation?igsh=MWJjY3l4a3l3a2Vleg==",
