@@ -172,17 +172,17 @@ const HomePage = () => {
               {[
                 {
                   title: "Animal Welfare",
-                  icon: "🐾",
+                  icon: "🥼",
                   description: "Rescuing and providing care for animals in need through our shelters and medical camps."
                 },
                 {
                   title: "Environmental Conservation",
-                  icon: "🌳",
+                  icon: "🥗",
                   description: "Protecting and restoring natural habitats through tree planting and cleanup drives."
                 },
                 {
                   title: "Community Development",
-                  icon: "👥",
+                  icon: "🐾",
                   description: "Empowering local communities through education, healthcare, and livelihood programs."
                 },
                 {

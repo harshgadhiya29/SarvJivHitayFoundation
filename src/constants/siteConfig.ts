@@ -111,6 +111,14 @@ export const galleryImages = [
     description: "Providing healthcare services to underserved communities",
     category: "Health",
     image: "https://images.pexels.com/photos/6647037/pexels-photo-6647037.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+
+  {
+    id: 8,
+    title: "Community Health Camp",
+    description: "Providing healthcare services to underserved communities",
+    category: "Health",
+    image: "https://images.pexels.com/photos/6647037/pexels-photo-6647037.jpeg?auto=compress&cs=tinysrgb&w=800"
   }
 ];
 
