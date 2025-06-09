@@ -1,0 +1,21 @@
+.skeleton-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.skeleton-line {
+  height: 1em;
+  background-color: #e0e0e0;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-line.medium {
+  width: 80%;
+} 
